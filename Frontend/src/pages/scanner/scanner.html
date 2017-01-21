@@ -1,7 +1,7 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Scan your items
+      Scan your item
     </ion-title>
   </ion-navbar>
 </ion-header>
@@ -9,4 +9,28 @@
 <ion-content padding>
     <ion-icon name = "store"> </ion-icon>
         <button ion-button block (click)="scan()">Scan</button>
+    
+    <ion-list>
+ 
+        <ion-item-sliding *ngFor="let item of shoppingItems">
+ 
+            <ion-item>
+                {{item}}
+            </ion-item>
+ 
+            <ion-item-options>
+                <button ion-button icon-only (click)="editNote(item)" light>
+                    <ion-icon name="ion-plus-circled"></ion-icon>
+                </button>
+                <button ion-button icon-only (click)="editNote(item)" light>
+                    <ion-icon name="ion-minus-circled"></ion-icon>
+                </button>
+                <button ion-button icon-only (click)="deleteNote(item)" danger>
+                    <ion-icon name="trash"></ion-icon>
+                </button>
+            </ion-item-options>
+ 
+        </ion-item-sliding>
+ 
+    </ion-list>
 </ion-content>
