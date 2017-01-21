@@ -9,17 +9,6 @@ require APPPATH . '/libraries/REST_Controller.php';
 // use namespace
 use Restserver\Libraries\REST_Controller;
 
-/**
- * This is an example of a few basic user interaction methods you could use
- * all done with a hardcoded array
- *
- * @package         CodeIgniter
- * @subpackage      Rest Server
- * @category        Controller
- * @author          Phil Sturgeon, Chris Kacerguis
- * @license         MIT
- * @link            https://github.com/chriskacerguis/codeigniter-restserver
- */
 class Items extends REST_Controller {
 
     function __construct()
