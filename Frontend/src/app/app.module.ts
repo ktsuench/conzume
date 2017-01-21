@@ -4,7 +4,7 @@ import { MyApp } from './app.component';
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
-import { RetailersPage } from '../pages/retailers/retailers';
+import { ScannerPage } from '../pages/scanner/scanner';
 import { StorePage } from '../pages/store/store';
 import { ReceiptsPage } from '../pages/receipts/receipts';
 import { TabsPage } from '../pages/tabs/tabs';
@@ -15,7 +15,7 @@ import { TabsPage } from '../pages/tabs/tabs';
     AboutPage,
     ContactPage,
     HomePage,
-    RetailersPage,
+    ScannerPage,
     StorePage,
     ReceiptsPage,
     TabsPage
@@ -29,7 +29,7 @@ import { TabsPage } from '../pages/tabs/tabs';
     AboutPage,
     ContactPage,
     HomePage,
-    RetailersPage,
+    ScannerPage,
     StorePage,
     ReceiptsPage,
     TabsPage
