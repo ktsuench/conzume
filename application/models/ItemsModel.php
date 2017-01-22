@@ -17,22 +17,26 @@ Class ItemsModel extends CI_Model{
             return $query->result_array();
         }
         
-        $query = $this->db->get_where(self::TABLE_NAME, array('id' => $id));
+        str_pad($id, 25, " ");
+        
+        $query = $this->db->get_where(self::TABLE_NAME, array('itemId' => $id));
         return $query->row_array();
     }
     
-    public function set_item($id = FALSE){
+    public function set_item($item = FALSE, $id = FALSE){
         $data = array(
-            'itemId'            =>  $this->input->post('id'),
-            'itemName'          =>  $this->input->post('type'),
-            'itemPrice'         =>  $this->input->post('first_name'),
-            'itemQuantity'      =>  $this->input->post('last_name'),
+            'itemId'            =>  $item['id'],
+            'itemName'          =>  $item['name'],
+            'itemPrice'         =>  floatval($item['price']),
+            'itemQuantity'      =>  intval($item['quantity']),
         );
         
-        if($id == FALSE){
-            return $this->db->insert(self::TABLE_NAME, $data);
-        }else{
-            return $this->db->update(self::TABLE_NAME, $data, array('id' => $id));
+        if ($id == FALSE) {
+            $item['message'] = $this->db->insert(self::TABLE_NAME, $data);
+            return $item;
+        } else {
+            $item['message'] = $this->db->update(self::TABLE_NAME, $data, array('id' => $id));
+            return $item;
         }
     }
     

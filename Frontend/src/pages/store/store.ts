@@ -7,9 +7,18 @@ import { NavController } from 'ionic-angular';
   templateUrl: 'store.html'
 })
 export class StorePage {
+  private retailers;
 
   constructor(public navCtrl: NavController) {
-
+    this.retailers = [
+      "Walmart",
+      "Loblaws",
+      "Shoppers Drug Mart",
+      "Sobeys",
+      "Rexall",
+      "Nordstrom",
+      "Metro"
+    ];
   }
 
 }
