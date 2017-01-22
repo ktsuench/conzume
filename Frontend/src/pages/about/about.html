@@ -11,15 +11,14 @@
 <div class="list">
 
   <div class="item item-input-inset">
-    <label class="item-input-wrapper">
-      <input type="text" [(ngModel)]="addme" fixed>
-    </label>
+  <div class="item item-input-inset">
+        <span> <input type="text" [(ngModel)]="addme"> </span>
+
     <button ion-button color="light" block (click)="addToList(addme)">Add</button>   
   </div>
 </div>
-    
-
-    <ion-item-sliding *ngFor="let post of posts">
+    </div>
+ <ion-item-sliding *ngFor="let post of posts">
         
         <ion-item>
             <ion-card>
