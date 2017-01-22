@@ -8,19 +8,13 @@
 <ion-content class="card-background-page" padding>
 
   <ion-card>
-    <a href="www.google.com">
-      <img src="https://www.tdcanadatrust.com/images/ccird/ccird-cash-back-card.jpg"/>
+      <img (click)="presentLoading('TD')" src="https://www.tdcanadatrust.com/images/ccird/ccird-cash-back-card.jpg"/>
     <div class="card-title">TD CANADA TRUST</div>
-    <div class="card-subtitle">UofTHacks</div>
-      </a>
   </ion-card>
 
   <ion-card>
-      <a href="www.pornhub.com">
-    <img src="https://online.royalbank.com/apply/cardapp/_assets-custom/cardart/en/avion_inf.png" />
+    <img (click)="presentLoading('RBC')" src="https://online.royalbank.com/apply/cardapp/_assets-custom/cardart/en/avion_inf.png" />
     <div class="card-title">RBC</div>
-    <div class="card-subtitle">Toronto, ON</div>
-      </a>
   </ion-card>
 
 </ion-content>

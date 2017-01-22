@@ -8,6 +8,7 @@
 
   <ion-navbar>
     <ion-title>Checkout</ion-title>
+
   </ion-navbar>
 
 </ion-header>
@@ -36,4 +37,27 @@
         </ion-item-sliding >
             
     </ion-list>
+
+      <ion-list>
+    <ion-item>
+      TOTAL:  ${{totalPrice}}
+      <button ion-button item-right (click)="changePage()" outline color="secondary"><H2>PAY</H2></button>
+    </ion-item>
+    </ion-list>
+
+
 </ion-content>
+
+<!-- <ion-item class="carde">
+        <ion-card color="secondary">
+            <ion-card-content class="c2">
+                PAY
+            </ion-card-content> 
+            <ion-card-content>
+                HST: ${{HST}}
+            </ion-card-content> 
+            <ion-card-header>
+                TOTAL:  ${{totalPrice}}
+            </ion-card-header>
+        </ion-card>
+    </ion-item> -->
