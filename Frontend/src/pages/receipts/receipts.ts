@@ -16,6 +16,8 @@ export class ReceiptsPage {
   constructor(public navCtrl: NavController) {
     if (localStorage.getItem("receipts")) {
       ReceiptsPage.receipts = JSON.parse(localStorage.getItem("receipts"));
+    } else {
+      ReceiptsPage.receipts = [];
     }
     console.log(ReceiptsPage.receipts);
   }
