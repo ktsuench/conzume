@@ -7,7 +7,7 @@
 </ion-header>
 
 <ion-content padding>
-  <button ion-button block (click)="retailersList()">
+  <button ion-button block round (click)="retailersList(retailer)" *ngFor="let retailer of retailers">
     <ion-icon name = "store"> </ion-icon>
-        Start Shopping</button>
+        {{retailer}}</button>
 </ion-content>
