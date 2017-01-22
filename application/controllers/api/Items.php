@@ -109,8 +109,12 @@ class Items extends REST_Controller {
             'quantity'  => $this->post('itemquantity')
         ];
         
-        $message = $this->ItemsModel->set_item($item);
-
+        if ($id !== NULL && $this->ItemsModel->get_item($id)) {
+            $message = $this->ItemsModel->set_item($item, $id);
+        } else {
+            $message = $this->ItemsModel->set_item($item);
+        }
+        
         $this->set_response($message, REST_Controller::HTTP_CREATED); // CREATED (201) being the HTTP response code
     }
 
