@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
@@ -66,4 +67,5 @@ Class ItemsModel extends CI_Model{
         return 0;
     }
 }
+
 ?>

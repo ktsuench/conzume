@@ -1,16 +1,35 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Scan your item
+      Scan item 
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
     <ion-icon name = "store"> </ion-icon>
-        <button ion-button block (click)="scan()">Scan</button>
+    <button ion-button block (click)="scan()">Scan</button>
     
     <ion-list>
+        <ion-item  class="item item-body" *ngFor="let post of posts">
+            {{post.itemName}}{{" $"}}{{post.itemPrice}}
+        </ion-item>
+
+        <ion-item-options>
+                
+                <button ion-button icon-only (click)="deleteNote(post)" danger>
+                    <ion-icon name="trash"></ion-icon>
+                </button>
+            </ion-item-options>
+
+    </ion-list>
+    
+    
+    
+</ion-content>
+  
+    
+<!--    <ion-list>
  
         <ion-item-sliding *ngFor="let item of shoppingItems">
  
@@ -30,7 +49,10 @@
                 </button>
             </ion-item-options>
  
+        <button ion-button block (click)="______">Checkout</button>
+
+        
+            
         </ion-item-sliding>
  
-    </ion-list>
-</ion-content>
+    </ion-list> -->

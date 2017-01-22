@@ -8,4 +8,34 @@
 
 <ion-content padding>
 
+<div class="list">
+
+  <div class="item item-input-inset">
+    <label class="item-input-wrapper">
+      <input type="text" [(ngModel)]="addme">
+    </label>
+    <button class="button button-small" (click)="addToList(addme)">Add</button>   
+  </div>
+</div>
+    
+<!--    <ion-list>
+        <ion-item *ngFor="let post of posts">
+            {{post}}
+        </ion-item>
+    </ion-list>
+    -->
+    <ion-item-sliding *ngFor="let post of posts">
+ 
+            <ion-item>
+                {{post}}
+            </ion-item>
+ 
+            <ion-item-options>
+                <button ion-button icon-only (click)="deleteNote(post)" danger>
+                    <ion-icon name="trash"></ion-icon>
+                </button>
+            </ion-item-options>
+    </ion-item-sliding>
+    
+    
 </ion-content>
