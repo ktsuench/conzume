@@ -3,6 +3,7 @@ import { BarcodeScanner } from 'ionic-native';
 import { NavController, Platform } from 'ionic-angular';
 import 'rxjs/add/operator/map';
 import { Http } from '@angular/http';
+import {CheckoutPage} from '../checkout/checkout';
 
 
 @Component({
@@ -15,7 +16,7 @@ export class ScannerPage {
 	public nav;
     public http; 
 
-	posts: any = [];
+	posts: any = [{"itemId":"0605388881243","itemName":"Great Value Natural Spring Water","itemPrice":0.99,"itemQuantity":5},{"itemId":"0605388881243","itemName":"Great Value Natural Spring Water","itemPrice":0.99,"itemQuantity":5}];
 
   static get parameters() {
         return [[Platform], [NavController], [Http]];
@@ -39,13 +40,17 @@ export class ScannerPage {
                     this.posts.push(data);
                     
                 });
-                
+
         }, (error) => {
 
                 console.log(error)
 
             });
         });
+    }
+
+    changePage() {
+        this.nav.push(CheckoutPage, this.posts);
     }
 
     editNote(note){
