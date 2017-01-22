@@ -3,6 +3,11 @@
     <ion-title>
       {{retailer}}: Scan Item
     </ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="changePage()" color="royal">
+        <ion-icon name="cart">Checkout</ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
@@ -34,7 +39,7 @@
             
     </ion-list>
     
-    <button ion-button block (click)="changePage()">Checkout</button>
+    <!--<button ion-button block (click)="changePage()">Checkout</button> -->
 </ion-content>
   
 

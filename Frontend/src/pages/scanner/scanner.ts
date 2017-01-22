@@ -16,8 +16,9 @@ export class ScannerPage {
 	public nav;
     public http; 
 
-	posts: any = [];
+	posts: any = [{"itemId":"0605388881243","itemName":"Great Value Natural Spring Water","itemPrice":0.99,"itemQuantity":5},{"itemId":"0605388881243","itemName":"Great Value Natural Spring Water","itemPrice":0.99,"itemQuantity":5}];
     retailer;
+    
   static get parameters() {
         return [[Platform], [NavController], [Http], [NavParams]];
     }
@@ -50,7 +51,7 @@ export class ScannerPage {
     }
 
     changePage() {
-        this.nav.push(CheckoutPage, this.posts);
+        this.nav.push(CheckoutPage, {'items':this.posts,'company': this.retailer});
     }
 
     editNote(note){
