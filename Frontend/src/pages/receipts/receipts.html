@@ -1,8 +1,13 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="primary">
     <ion-title>Receipts</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
+  <ion-list>
+    <button ion-item *ngFor="let receipt of receipts" (click)="receiptSelected(receipt)">
+      {{ receipt.name }}
+    </button>
+  </ion-list>
 </ion-content>

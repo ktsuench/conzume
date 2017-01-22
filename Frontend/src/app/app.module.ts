@@ -7,8 +7,12 @@ import { HomePage } from '../pages/home/home';
 import { ScannerPage } from '../pages/scanner/scanner';
 import { StorePage } from '../pages/store/store';
 import { ReceiptsPage } from '../pages/receipts/receipts';
+import { ReceiptPage } from '../pages/receipt/receipt'
 import { TabsPage } from '../pages/tabs/tabs';
 import { PaymentPage } from '../pages/payment/payment';
+import { CheckoutPage } from '../pages/checkout/checkout';
+import { SuccessPage } from '../pages/success/success';
+
 
 @NgModule({
   declarations: [
@@ -19,8 +23,11 @@ import { PaymentPage } from '../pages/payment/payment';
     ScannerPage,
     StorePage,
     ReceiptsPage,
+    ReceiptPage,
     TabsPage,
-    PaymentPage
+    PaymentPage,
+    CheckoutPage,
+    SuccessPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -34,8 +41,11 @@ import { PaymentPage } from '../pages/payment/payment';
     ScannerPage,
     StorePage,
     ReceiptsPage,
+    ReceiptPage,
     TabsPage,
-    PaymentPage
+    PaymentPage,
+    CheckoutPage,
+    SuccessPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })

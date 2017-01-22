@@ -1,7 +1,7 @@
 
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar color="primary">
     <ion-title>Continue Checkout</ion-title>
   </ion-navbar>
 
@@ -12,10 +12,8 @@
 <ion-content padding>
 
 <ion-card>
-<h2>Bought from {{company}}, paid with {{bank}}. </h2>
-<H3>Proccessed Successfully! </H3>
+  <ion-card-header>Bought from {{company}}, paid with {{bank}}.</ion-card-header>
+  <ion-card-content><ion-icon name="checkmark-circle" color="secondary"></ion-icon> Proccessed Successfully!</ion-card-content>
 </ion-card>
-<ion-icon name="checkmark-circle" color="secondary"></ion-icon>
 <button ion-button block (click)="changePage()"> VIEW RECEIPT</button>
-checkmark-circle
 </ion-content>

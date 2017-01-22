@@ -25,7 +25,7 @@ export class SuccessPage {
   }
 
   changePage(){
-  	this.navCtrl.push(ReceiptPage, {'items':this.posts, 'company':this.company, 'price':this.totalPrice, 'bank': name});
+  	this.navCtrl.push(ReceiptPage, {'items':this.posts, 'company':this.company, 'price':this.totalPrice, 'bank': this.bank});
   }
 
 }
