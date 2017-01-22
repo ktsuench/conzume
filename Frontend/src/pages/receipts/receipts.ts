@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { NavController } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 import { ReceiptPage } from '../receipt/receipt';
 
 @Component({
@@ -10,16 +10,15 @@ import { ReceiptPage } from '../receipt/receipt';
 
 export class ReceiptsPage {
 
-  public static receipts;
-  receiptsPub;
+  public receipts;
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController, public navParam: NavParams) {
     if (localStorage.getItem("receipts")) {
-      ReceiptsPage.receipts = JSON.parse(localStorage.getItem("receipts"));
+      this.receipts = JSON.parse(localStorage.getItem("receipts"));
     } else {
-      ReceiptsPage.receipts = [];
+      this.receipts = [];
     }
-    console.log(ReceiptsPage.receipts);
+    console.log(this.receipts);
   }
 
   public static createReceipt(items, price, company, bank) {
@@ -42,13 +41,23 @@ export class ReceiptsPage {
   }
 
   public static addReceipt(receipt) {
-    ReceiptsPage.receipts.push(receipt);
+    //ReceiptsPage.receipts.push(receipt);
     console.log(receipt);
-    localStorage.setItem("receipts", JSON.stringify(ReceiptsPage.receipts));
+
+    var temp;
+
+    if (localStorage.getItem("receipts")) {
+      temp = JSON.parse(localStorage.getItem("receipts"));
+    } else {
+      temp = [];
+    }
+
+    temp.push(receipt);
+    localStorage.setItem("receipts", JSON.stringify(temp));
   }
 
   receiptSelected(receipt) {
-    this.navCtrl.push(ReceiptPage, {'items':receipt.items, 'company':receipt.company, 'price': receipt.totalPrice, 'bank': receipt.bank});
+    this.navCtrl.push(ReceiptPage, {'items':receipt.items, 'company':receipt.company, 'price': receipt.price, 'bank': receipt.bank});
   }
 
 }

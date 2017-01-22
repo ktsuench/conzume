@@ -14,17 +14,17 @@ import { ReceiptsPage } from '../receipts/receipts';
 })
 export class ReceiptPage {
 	posts: any = [];
-	totalPrice;
+	price;
 	company;
 	bank;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
 	this.posts = navParams.get('items');
   	this.company = navParams.get('company');
-  	this.totalPrice = navParams.get('price');
+  	this.price = navParams.get('price');
   	this.bank = navParams.get('bank');
 
-  	ReceiptsPage.createReceipt(this.posts, this.totalPrice, this.company, this.bank);
+  	ReceiptsPage.createReceipt(this.posts, this.price, this.company, this.bank);
   }
 
   ionViewDidLoad() {

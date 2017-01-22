@@ -25,8 +25,11 @@ export class PaymentPage {
     });
 
     loader.present();
-
-    this.navCtrl.push(SuccessPage, {'items':this.posts, 'company':this.company, 'price':this.totalPrice, 'bank': name });
+    
+    window.setTimeout(function(){
+      this.navCtrl.push(SuccessPage, {'items':this.posts, 'company':this.company, 'price':this.totalPrice, 'bank': name });
+    }.bind(this),2500);
+    
   }
 
   ionViewDidLoad() {

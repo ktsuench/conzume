@@ -1,11 +1,11 @@
 <ion-header>
   <ion-navbar color="primary">
     <ion-title>
-      {{retailer}}: Scan Item
+      {{retailer}}
     </ion-title>
     <ion-buttons end>
       <button ion-button (click)="changePage()" color="royal">
-        <ion-icon name="cart">Checkout</ion-icon>
+        <ion-icon name="cart"></ion-icon>
       </button>
     </ion-buttons>
   </ion-navbar>
@@ -13,7 +13,7 @@
 
 <ion-content padding>
     <ion-icon name = "store"> </ion-icon>
-    <button ion-button block (click)="scan()">Scan</button>
+    <button ion-button block large (click)="scan()">Scan</button>
 
     
         <ion-list *ngFor="let post of posts">
