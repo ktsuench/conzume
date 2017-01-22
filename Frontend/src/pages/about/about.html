@@ -1,7 +1,7 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Things to buy
+      Shopping List
     </ion-title>
   </ion-navbar>
 </ion-header>
@@ -12,9 +12,9 @@
 
   <div class="item item-input-inset">
     <label class="item-input-wrapper">
-      <input type="text" [(ngModel)]="addme">
+      <input type="text" [(ngModel)]="addme" fixed>
     </label>
-    <button ion-button color="light" (click)="addToList(addme)">Add</button>   
+    <button ion-button color="light" block (click)="addToList(addme)">Add</button>   
   </div>
 </div>
     
