@@ -35,10 +35,11 @@ export class ScannerPage {
             this.http.get('http://ireceipt.azurewebsites.net/api/items/' + result.text)
                 .map(res => res.json())
                 .subscribe(data => {
-                    console.log(data);
-                    /*this.posts = data.data.children;*/
+                    //console.log(data);
+                    this.posts.push(data);
+                    
                 });
-            //console.log(this.posts)
+                
         }, (error) => {
 
                 console.log(error)
