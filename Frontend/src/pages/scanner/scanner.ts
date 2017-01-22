@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { BarcodeScanner } from 'ionic-native';
-import { NavController, Platform, AlertController } from 'ionic-angular';
+import { NavController, Platform } from 'ionic-angular';
+import 'rxjs/add/operator/map';
+import { Http } from '@angular/http';
+
 
 @Component({
   selector: 'page-scanner',
@@ -10,27 +13,33 @@ export class ScannerPage {
 
 	public platform;
 	public nav;
+    public http; 
 
-	shoppingItems: any = [];
+	posts: any = [];
 
   static get parameters() {
-        return [[Platform], [NavController]];
+        return [[Platform], [NavController], [Http]];
     }
  
-    constructor(platform, navController,public alertCtrl: AlertController) {
+    constructor(platform, navController, http) {
+        
         this.platform = platform;
         this.nav = navController;
+        this.http = http;
     }
 
   scan() {
-        this.platform.ready().then(() => {
-            BarcodeScanner.scan().then((result) => {
-
-                console.log(result.text)                
- 				this.shoppingItems.push(result.text);
-        		
-
-            }, (error) => {
+    this.platform.ready().then(() => {
+        BarcodeScanner.scan().then((result) => {
+            console.log(result.text);       
+            this.http.get('http://ireceipt.azurewebsites.net/api/items/' + result.text)
+                .map(res => res.json())
+                .subscribe(data => {
+                    console.log(data);
+                    /*this.posts = data.data.children;*/
+                });
+            //console.log(this.posts)
+        }, (error) => {
 
                 console.log(error)
 
@@ -40,38 +49,15 @@ export class ScannerPage {
 
     editNote(note){
  
-        let prompt = this.alertCtrl.create({
-            title: 'Edit Note',
-            inputs: [{
-                name: 'title'
-            }],
-            buttons: [
-                {
-                    text: 'Cancel'
-                },
-                {
-                    text: 'Save',
-                    handler: data => {
-                        let index = this.shoppingItems.indexOf(note);
- 
-                        if(index > -1){
-                          this.shoppingItems[index] = data;
-                        }
-                    }
-                }
-            ]
-        });
- 
-        this.nav.present(prompt);       
  
     }
  
     deleteNote(note){
  
-        let index = this.shoppingItems.indexOf(note);
+        let index = this.posts.indexOf(note);
  
         if(index > -1){
-            this.shoppingItems.splice(index, 1);
+            this.posts.splice(index, 1);
         }
     }
 
