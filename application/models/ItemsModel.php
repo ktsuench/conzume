@@ -35,7 +35,7 @@ Class ItemsModel extends CI_Model{
             $item['message'] = $this->db->insert(self::TABLE_NAME, $data);
             return $item;
         } else {
-            $item['message'] = $this->db->update(self::TABLE_NAME, $data, array('id' => $id));
+            $item['message'] = $this->db->update(self::TABLE_NAME, $data, array('itemId' => $id));
             return $item;
         }
     }

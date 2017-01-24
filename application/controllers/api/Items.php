@@ -109,8 +109,8 @@ class Items extends REST_Controller {
             'quantity'  => $this->post('itemquantity')
         ];
         
-        if ($id !== NULL && $this->ItemsModel->get_item($id)) {
-            $message = $this->ItemsModel->set_item($item, $id);
+        if ($this->ItemsModel->get_item($item['id'])) {
+            $message = $this->ItemsModel->set_item($item, $item['id']);
         } else {
             $message = $this->ItemsModel->set_item($item);
         }
