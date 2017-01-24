@@ -1,3 +1,8 @@
 ion-card {
   color: map-get($colors, primary);
 }
+
+input[type="text"] {
+  width: 100%;
+  display: table;
+}

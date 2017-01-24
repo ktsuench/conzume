@@ -20,8 +20,12 @@ export class AboutPage {
   }
   
     deleteNote(note){
+ 
         let index = this.posts.indexOf(note);
-        this.posts.splice(index, 1);
+ 
+        if(index > -1){
+            this.posts.splice(index, 1);
+        }
     }
   
 

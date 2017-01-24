@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
 import { NavController } from 'ionic-angular';
+import { ScannerPage } from '../scanner/scanner';
 
 @Component({
   selector: 'page-store',
@@ -19,6 +20,10 @@ export class StorePage {
       "Nordstrom",
       "Metro"
     ];
+  }
+
+  sendToScanner(retailer: string) {
+    this.navCtrl.push(ScannerPage, retailer);
   }
 
 }
