@@ -25,8 +25,7 @@ If you want to run this on a iPhone, go to the platforms/ios directory and open 
 If you want to run this on an Android phone, the requirements is that you need Android 5 and above. You will require to have Java and the correct Android SDK installed for your phone to run the app. Once you have met those requirements, in the terminal run `ionic run android`.
 
 ## Run in Browser
-To view the app on web, run 'ionic serve' - then go to developer tab, and select "Enter Responsive Design Mode".
+To view the app on web, in terminal run `ionic serve` - then go to developer tab, and select "Enter Responsive Design Mode".
 
 ## Contact Us
-If there are any issues please feel free to get in touch with us.
-*Thank you.*
+If there are any issues please feel free to get in touch with us. *Thank you.*
